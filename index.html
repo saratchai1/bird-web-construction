@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>นกท้องถิ่นแห่งกระบี่ & โครงการอ่างเก็บน้ำบางเท่าแม่</title>
+    <!-- Include font awesome for new sections -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Global Video Background -->
+    <div class="global-video-bg-container">
+        <video autoplay loop muted playsinline class="global-video-bg">
+            <source src="clip/My Movie.mp4" type="video/mp4">
+        </video>
+        <div class="global-video-overlay"></div>
+    </div>
+
+    <!-- Floating Birds -->
+    <div class="floating-birds-container" id="floatingBirds"></div>
+
+    <!-- ORIGINAL BIRD SECTION (UNMODIFIED) -->
+    <main class="container">
+        <header>
+            <h1>นกท้องถิ่นแห่งกระบี่</h1>
+            <p class="subtitle">Local Birds of Krabi fly animations</p>
+        </header>
+
+        <nav class="filters">
+            <button class="filter-btn active">ป่าดิบชื้นที่ราบต่ำ</button>
+            <button class="filter-btn">ป่าหินปูน</button>
+            <button class="filter-btn">ป่าชายเลน</button>
+            <button class="filter-btn">ป่าชายหาด</button>
+        </nav>
+
+        <div class="birds-showcase">
+            <!-- SVG Connecting Lines -->
+            <svg class="connecting-lines" viewBox="0 0 1200 600" preserveAspectRatio="none">
+                <!-- We will add dynamic glowing paths here via CSS and JS -->
+                <path class="line-path" d="M 100,150 Q 200,250 300,150 T 500,150 T 700,150 T 900,150 T 1100,150" />
+                <path class="line-path" d="M 100,450 Q 200,350 300,450 T 500,450 T 700,450 T 900,450 T 1100,450" />
+                <path class="line-path" d="M 300,150 Q 500,300 700,450" />
+                <path class="line-path" d="M 500,150 Q 700,300 900,450" />
+            </svg>
+
+            <div class="birds-grid">
+                <!-- Top Row -->
+                <div class="bird-card" data-index="1">
+                    <div class="card-inner">
+                        <img src="assets/bird1.png" alt="นกแต้วแล้วท้องดำ">
+                        <div class="card-info">
+                            <h3>นกแต้วแล้วท้องดำ</h3>
+                            <p>Gurney's Pitta</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bird-card" data-index="2">
+                    <div class="card-inner">
+                        <img src="assets/bird2.png" alt="นกเงือกดำ">
+                        <div class="card-info">
+                            <h3>นกเงือกดำ</h3>
+                            <p>Black Hornbill</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bird-card" data-index="3">
+                    <div class="card-inner">
+                        <img src="assets/bird3.png" alt="นกกระเต็นใหญ่ปีกสีน้ำตาล">
+                        <div class="card-info">
+                            <h3>นกกระเต็นใหญ่ปีกสีน้ำตาล</h3>
+                            <p>Brown-winged Kingfisher</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bird-card" data-index="4">
+                    <div class="card-inner">
+                        <img src="assets/bird4.png" alt="นกโพระดกคางแดง">
+                        <div class="card-info">
+                            <h3>นกโพระดกคางแดง</h3>
+                            <p>Red-throated Barbet</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bird-card" data-index="5">
+                    <div class="card-inner">
+                        <img src="assets/bird1.png" alt="นกกางเขนน้ำหัวขาว">
+                        <div class="card-info">
+                            <h3>นกกางเขนน้ำหัวขาว</h3>
+                            <p>White-crowned Forktail</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bird-card" data-index="6">
+                    <div class="card-inner">
+                        <img src="assets/bird4.png" alt="นกขุนแผนอกส้ม">
+                        <div class="card-info">
+                            <h3>นกขุนแผนอกส้ม</h3>
+                            <p>Orange-breasted Trogon</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Row -->
+                <div class="bird-card" data-index="7">
+                    <div class="card-inner">
+                        <img src="assets/bird3.png" alt="นกกินแมลงหัวแดงใหญ่">
+                        <div class="card-info">
+                            <h3>นกกินแมลงหัวแดงใหญ่</h3>
+                            <p>Chestnut-crowned Babbler</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bird-card" data-index="8">
+                    <div class="card-inner">
+                        <img src="assets/bird2.png" alt="นกปรอดคอลาย">
+                        <div class="card-info">
+                            <h3>นกปรอดคอลาย</h3>
+                            <p>Stripe-throated Bulbul</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bird-card" data-index="9">
+                    <div class="card-inner">
+                        <img src="assets/bird1.png" alt="นกเงือกกรามช้าง">
+                        <div class="card-info">
+                            <h3>นกเงือกกรามช้าง</h3>
+                            <p>Wreathed Hornbill</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bird-card" data-index="10">
+                    <div class="card-inner">
+                        <img src="assets/bird2.png" alt="นกแต้วแล้วป่าโกงกาง">
+                        <div class="card-info">
+                            <h3>นกแต้วแล้วป่าโกงกาง</h3>
+                            <p>Mangrove Pitta</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bird-card" data-index="11">
+                    <div class="card-inner">
+                        <img src="assets/bird3.png" alt="นกกระเต็นน้อยแถบอกดำ">
+                        <div class="card-info">
+                            <h3>นกกระเต็นน้อยแถบอกดำ</h3>
+                            <p>Blue-banded Kingfisher</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bird-card" data-index="12">
+                    <div class="card-inner">
+                        <img src="assets/bird4.png" alt="นกบั้งรอกเขียวอกแดง">
+                        <div class="card-info">
+                            <h3>นกบั้งรอกเขียวอกแดง</h3>
+                            <p>Chestnut-breasted Malkoha</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="explore-more">
+            <button class="explore-btn" onclick="scrollToNextSection()">สำรวจโครงการเพิ่มเติม</button>
+        </div>
+    </main>
+
+    <!-- NEW SECTION 2 & 3 APPENDED BELOW -->
+    <div id="new-content-wrapper" class="new-sections-container">
+        <!-- SECTION 2: Reservoir Purpose & Benefits -->
+        <section id="reservoir-benefits" class="new-section-block dark-alt-section">
+            <div class="new-container relative-content">
+                <div class="new-section-header text-center">
+                    <span class="new-section-tag cyan-tag"><i class="fa-solid fa-droplet"></i> โครงการเพื่อสิ่งแวดล้อมและความยั่งยืน</span>
+                    <h2 class="new-section-title">อ่างเก็บน้ำบางเท่าแม่ จ.กระบี่</h2>
+                    <p class="new-section-subtitle">
+                        เพิ่มปริมาณน้ำต้นทุน 5.7 ล้าน ลบ.ม./ปี เพื่อสร้างสมดุล คืนความชุ่มชื้นให้ป่า 2,000 ไร่ และส่งมอบน้ำสู่ภาคการเกษตร
+                    </p>
+                </div>
+
+                <!-- 3 Pillars of Impact -->
+                <div class="new-impact-pillars-grid">
+                    <!-- Pillar 1 -->
+                    <div class="new-pillar-card new-glass-panel">
+                        <div class="new-pillar-header">
+                            <div class="new-pillar-num">01</div>
+                            <div class="new-pillar-icon"><i class="fa-solid fa-tree-city"></i></div>
+                        </div>
+                        <h3>สร้างความชุ่มชื้นให้ผืนป่า 2,000 ไร่</h3>
+                        <p>
+                            อ่างเก็บน้ำเป็น "ธนาคารน้ำธรรมชาติ" ช่วยเติมน้ำใต้ดิน แผ่ความชุ่มชื้นให้ป่าต้นน้ำ ลดความเสี่ยงไฟป่า และเป็นแหล่งน้ำซับให้สัตว์ป่าอย่างนกเงือกและนกกระเต็นป่า
+                        </p>
+                    </div>
+
+                    <!-- Pillar 2 -->
+                    <div class="new-pillar-card new-glass-panel new-featured-pillar">
+                        <div class="new-pillar-header">
+                            <div class="new-pillar-num highlight-num">02</div>
+                            <div class="new-pillar-icon highlight-icon"><i class="fa-solid fa-faucet-drip"></i></div>
+                        </div>
+                        <h3>ระบบส่งน้ำแรงโน้มถ่วง 100% (Gravity)</h3>
+                        <p>
+                            ระบบท่อชลประทานส่งน้ำอาศัยความต่างระดับความสูง สู่พื้นที่การเกษตร ต.เขาต่อ อ.ปลายพระยา ประหยัดพลังงานไฟฟ้า 100% และเป็นมิตรต่อสิ่งแวดล้อม
+                        </p>
+                    </div>
+
+                    <!-- Pillar 3 -->
+                    <div class="new-pillar-card new-glass-panel">
+                        <div class="new-pillar-header">
+                            <div class="new-pillar-num">03</div>
+                            <div class="new-pillar-icon"><i class="fa-solid fa-hand-holding-droplet"></i></div>
+                        </div>
+                        <h3>ความมั่นคงทางน้ำของชุมชน</h3>
+                        <p>
+                            แก้ปัญหาขาดแคลนน้ำอุปโภค-บริโภคในหน้าแล้ง และหน่วงน้ำเพื่อชะลอน้ำหลากในฤดูมรสุม ลดผลกระทบจากอุทกภัยต่อชุมชนท้ายน้ำ
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Engineering Quality & Blueprints vs. Real Build -->
+        <section id="engineering-quality" class="new-section-block">
+            <div class="new-container">
+                <div class="new-section-header text-center">
+                    <span class="new-section-tag gold-tag"><i class="fa-solid fa-drafting-compass"></i> มาตรฐานวิศวกรรมสากล</span>
+                    <h2 class="new-section-title">คุณภาพงานก่อสร้าง & เปรียบเทียบ 3D แบบแปลน</h2>
+                    <p class="new-section-subtitle">
+                        คอนกรีตโครงสร้างมาตรฐาน f'c 240 ksc, งานบดอัดแน่น 95% และระบบตรวจวัดพฤติกรรมเขื่อน
+                    </p>
+                </div>
+
+
+
+                <!-- FULL GALLERY SECTION -->
+                <div class="new-full-gallery-container">
+                    <div class="new-gallery-tabs-nav">
+                        <button class="new-gallery-tab-btn active" data-target="gallery-blueprints">
+                            <i class="fa-solid fa-file-lines"></i> แบบแปลน 3D/CAD (5 ภาพ)
+                        </button>
+                        <button class="new-gallery-tab-btn" data-target="gallery-realbuild">
+                            <i class="fa-solid fa-helmet-safety"></i> ภาพก่อสร้างจริง (7 ภาพ)
+                        </button>
+                    </div>
+
+                    <!-- Blueprint Gallery -->
+                    <div id="gallery-blueprints" class="new-gallery-tab-pane active">
+                        <div class="new-gallery-cards-grid">
+                            <div class="new-gallery-photo-card new-glass-panel" onclick="openLightbox('pic/แบบก่อสร้าง/บางเท่าแม่ [1]_0.jpg', 'แบบแปลนแผ่นที่ 1: แผนผังบริเวณและแนวสันเขื่อน')">
+                                <img src="pic/แบบก่อสร้าง/บางเท่าแม่ [1]_0.jpg" alt="Blueprint 1">
+                                <div class="new-photo-info">แผนผังบริเวณและแนวสันเขื่อน</div>
+                            </div>
+                            <div class="new-gallery-photo-card new-glass-panel" onclick="openLightbox('pic/แบบก่อสร้าง/บางเท่าแม่ [2]_0.jpg', 'แบบแปลนแผ่นที่ 2: รูปตัดขวางและการบดอัดแกนดิน 95%')">
+                                <img src="pic/แบบก่อสร้าง/บางเท่าแม่ [2]_0.jpg" alt="Blueprint 2">
+                                <div class="new-photo-info">รูปตัดตามขวางตัวเขื่อน</div>
+                            </div>
+                            <div class="new-gallery-photo-card new-glass-panel" onclick="openLightbox('pic/แบบก่อสร้าง/บางเท่าแม่ [3]_0.jpg', 'แบบแปลนแผ่นที่ 3: อาคารระบายน้ำล้น (Spillway)')">
+                                <img src="pic/แบบก่อสร้าง/บางเท่าแม่ [3]_0.jpg" alt="Blueprint 3">
+                                <div class="new-photo-info">อาคารระบายน้ำล้น (Spillway)</div>
+                            </div>
+                            <div class="new-gallery-photo-card new-glass-panel" onclick="openLightbox('pic/แบบก่อสร้าง/บางเท่าแม่ [4]_0.jpg', 'แบบแปลนแผ่นที่ 4: อาคารท่อส่งน้ำ (Outlet Works)')">
+                                <img src="pic/แบบก่อสร้าง/บางเท่าแม่ [4]_0.jpg" alt="Blueprint 4">
+                                <div class="new-photo-info">อาคารท่อส่งน้ำ (Outlet Works)</div>
+                            </div>
+                            <div class="new-gallery-photo-card new-glass-panel" onclick="openLightbox('pic/แบบก่อสร้าง/บางเท่าแม่ [5]_0.jpg', 'แบบแปลนแผ่นที่ 5: ระบบท่อส่งน้ำแรงโน้มถ่วง')">
+                                <img src="pic/แบบก่อสร้าง/บางเท่าแม่ [5]_0.jpg" alt="Blueprint 5">
+                                <div class="new-photo-info">ระบบท่อแรงโน้มถ่วง (Gravity)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Real Build Gallery -->
+                    <div id="gallery-realbuild" class="new-gallery-tab-pane">
+                        <div class="new-gallery-cards-grid">
+                            <div class="new-gallery-photo-card new-glass-panel" onclick="openLightbox('pic/การก่อสร้างจริง/322430.jpg', 'ภาพมุมสูงความก้าวหน้าโครงการ')">
+                                <img src="pic/การก่อสร้างจริง/322430.jpg" alt="Real 1">
+                                <div class="new-photo-info">ภาพมุมสูงความก้าวหน้าโครงการ</div>
+                            </div>
+                            <div class="new-gallery-photo-card new-glass-panel" onclick="openLightbox('pic/การก่อสร้างจริง/322352.jpg', 'งานก่อสร้างอาคารระบายน้ำล้น f\'c 240 ksc')">
+                                <img src="pic/การก่อสร้างจริง/322352.jpg" alt="Real 2">
+                                <div class="new-photo-info">งานก่อสร้างอาคารระบายน้ำล้น</div>
+                            </div>
+                            <div class="new-gallery-photo-card new-glass-panel" onclick="openLightbox('pic/การก่อสร้างจริง/28139.jpg', 'งานผูกเหล็กและประกอบแบบหล่อคอนกรีต')">
+                                <img src="pic/การก่อสร้างจริง/28139.jpg" alt="Real 3">
+                                <div class="new-photo-info">งานผูกเหล็กและท่อระบาย</div>
+                            </div>
+                            <div class="new-gallery-photo-card new-glass-panel" onclick="openLightbox('pic/การก่อสร้างจริง/27958.jpg', 'งานบดอัดแน่น 95% Standard Proctor')">
+                                <img src="pic/การก่อสร้างจริง/27958.jpg" alt="Real 4">
+                                <div class="new-photo-info">งานบดอัดแน่น 95%</div>
+                            </div>
+                            <div class="new-gallery-photo-card new-glass-panel" onclick="openLightbox('pic/การก่อสร้างจริง/27483.jpg', 'งานวางระบบท่อส่งน้ำแรงโน้มถ่วง')">
+                                <img src="pic/การก่อสร้างจริง/27483.jpg" alt="Real 5">
+                                <div class="new-photo-info">งานวางระบบท่อส่งน้ำ</div>
+                            </div>
+                            <div class="new-gallery-photo-card new-glass-panel" onclick="openLightbox('pic/การก่อสร้างจริง/27161.jpg', 'งานปรับพื้นที่ฐานรากเขื่อน')">
+                                <img src="pic/การก่อสร้างจริง/27161.jpg" alt="Real 6">
+                                <div class="new-photo-info">งานเตรียมพื้นที่ฐานราก</div>
+                            </div>
+                            <div class="new-gallery-photo-card new-glass-panel" onclick="openLightbox('pic/การก่อสร้างจริง/97370.jpg', 'งานติดตั้งท่อและวาล์วควบคุม')">
+                                <img src="pic/การก่อสร้างจริง/97370.jpg" alt="Real 7">
+                                <div class="new-photo-info">งานติดตั้งท่อและวาล์ว</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Public Feedback & Complaints -->
+        <section id="public-feedback" class="new-section-block dark-alt-section">
+            <div class="new-container">
+                <div class="new-section-header text-center">
+                    <span class="new-section-tag emerald-tag"><i class="fa-solid fa-bullhorn"></i> การมีส่วนร่วมของประชาชน</span>
+                    <h2 class="new-section-title">แสดงความคิดเห็น / ร้องเรียน</h2>
+                    <p class="new-section-subtitle">
+                        เรายินดีรับฟังทุกความคิดเห็น ข้อเสนอแนะ หรือข้อร้องเรียนเกี่ยวกับการก่อสร้างโครงการ เพื่อนำไปปรับปรุงและแก้ไข
+                    </p>
+                </div>
+
+                <div class="feedback-container">
+                    <div class="feedback-form-card new-glass-panel">
+                        <h3>ส่งข้อความถึงโครงการ</h3>
+                        <form id="complaintForm" class="complaint-form">
+                            <div class="form-group">
+                                <label for="complaintName">ชื่อ - นามสกุล (หรือนามแฝง)</label>
+                                <input type="text" id="complaintName" class="form-input" placeholder="กรอกชื่อของคุณ">
+                            </div>
+                            <div class="form-group">
+                                <label for="complaintType">ประเภทข้อความ</label>
+                                <select id="complaintType" class="form-input">
+                                    <option value="ทั่วไป">ความคิดเห็นทั่วไป</option>
+                                    <option value="เสนอแนะ">ข้อเสนอแนะ</option>
+                                    <option value="ร้องเรียน">ร้องเรียนผลกระทบ</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="complaintText">รายละเอียด</label>
+                                <textarea id="complaintText" class="form-input" rows="4" placeholder="กรอกรายละเอียดที่นี่..." required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="complaintImage" class="file-upload-label"><i class="fa-solid fa-image"></i> แนบรูปภาพ (ถ้ามี)</label>
+                                <input type="file" id="complaintImage" class="form-input file-input" accept="image/*">
+                            </div>
+                            <button type="submit" class="submit-btn primary-btn"><i class="fa-solid fa-paper-plane"></i> ส่งข้อความ</button>
+                        </form>
+                    </div>
+
+                    <div class="feedback-list-card new-glass-panel">
+                        <h3>เสียงจากประชาชน</h3>
+                        <div class="complaints-list" id="complaintsList">
+                            <div class="loading-text">กำลังโหลดความคิดเห็น...</div>
+                            <!-- Feedbacks will be populated here by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="newLightboxModal" class="new-lightbox-backdrop" onclick="closeLightbox(event)">
+        <div class="new-lightbox-wrapper">
+            <button class="new-lightbox-close" onclick="closeLightbox(event)">&times;</button>
+            <div class="lightbox-scroll-area">
+                <img id="newLightboxImg" src="" alt="ขยายภาพ">
+                <div class="new-lightbox-caption" id="newLightboxCaption"></div>
+                
+                <!-- BIRD COMMENTS SECTION -->
+                <div class="bird-comments-section" id="birdCommentsSection" style="display: none;">
+                    <h4><i class="fa-solid fa-location-dot"></i> จุดพบนก (รายงานโดยประชาชน)</h4>
+                    <div class="comments-list" id="birdCommentsList">
+                        <div class="loading-text">กำลังโหลดข้อมูล...</div>
+                    </div>
+                    <form id="birdCommentForm" class="comment-form">
+                        <input type="hidden" id="currentBirdName">
+                        <input type="text" id="birdCommenterName" placeholder="ชื่อผู้พบเห็น (ไม่ระบุก็ได้)" class="form-input">
+                        <textarea id="birdCommentText" placeholder="ฉันเจอนกตัวนี้ที่..." required class="form-input" rows="2"></textarea>
+                        <div class="file-upload-wrapper">
+                            <label for="birdCommentImage" class="file-upload-label"><i class="fa-solid fa-camera"></i> แนบรูปถ่ายนก (ถ้ามี)</label>
+                            <input type="file" id="birdCommentImage" class="form-input file-input" accept="image/*">
+                        </div>
+                        <button type="submit" class="submit-btn"><i class="fa-solid fa-paper-plane"></i> รายงานการพบเห็น</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Use module type for Firebase integration -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
