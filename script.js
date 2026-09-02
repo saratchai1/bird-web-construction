@@ -483,11 +483,11 @@ function initAudioPlayer() {
         const updateUI = () => {
             if (!audio.paused) {
                 playBtn.classList.add('playing');
-                playBtn.innerHTML = '<i class="fa-solid fa-pause"></i> กำลังเล่นเสียงแบคกราวด์...';
+                playBtn.innerHTML = '<i class="fa-solid fa-pause"></i> กำลังเล่นเสียงนกบินหลาดง...';
                 if(waves) waves.classList.add('active');
             } else {
                 playBtn.classList.remove('playing');
-                playBtn.innerHTML = '<i class="fa-solid fa-play"></i> เล่นเสียงแบคกราวด์';
+                playBtn.innerHTML = '<i class="fa-solid fa-play"></i> ฟังเสียงนกบินหลาดง';
                 if(waves) waves.classList.remove('active');
             }
         };
