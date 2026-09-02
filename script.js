@@ -467,3 +467,71 @@ document.getElementById('complaintForm')?.addEventListener('submit', async (e) =
         btn.disabled = false;
     }
 });
+
+// ==========================================
+// FEATURED BIRD AUDIO PLAYER (BACKGROUND)
+// ==========================================
+function initAudioPlayer() {
+    const playBtn = document.getElementById('playShamaSongBtn');
+    const audio = document.getElementById('shamaAudio');
+    const waves = document.getElementById('audioWaves');
+    
+    let hasInteracted = false;
+
+    if (playBtn && audio) {
+        // Function to update UI based on audio state
+        const updateUI = () => {
+            if (!audio.paused) {
+                playBtn.classList.add('playing');
+                playBtn.innerHTML = '<i class="fa-solid fa-pause"></i> กำลังเล่นเสียงแบคกราวด์...';
+                if(waves) waves.classList.add('active');
+            } else {
+                playBtn.classList.remove('playing');
+                playBtn.innerHTML = '<i class="fa-solid fa-play"></i> เล่นเสียงแบคกราวด์';
+                if(waves) waves.classList.remove('active');
+            }
+        };
+
+        // Try to play immediately (might be blocked by browser)
+        const playAudio = async () => {
+            try {
+                await audio.play();
+                updateUI();
+            } catch (err) {
+                console.log("Autoplay prevented by browser. Waiting for user interaction.");
+                updateUI(); // UI will show paused state if blocked
+            }
+        };
+
+        // Attempt autoplay on load
+        playAudio();
+
+        // Handle button click toggle
+        playBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent document click from firing immediately
+            hasInteracted = true;
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+            updateUI();
+        });
+
+        // If autoplay was blocked, start playing on the first interaction with the document
+        document.addEventListener('click', () => {
+            if (!hasInteracted && audio.paused) {
+                hasInteracted = true;
+                audio.play();
+                updateUI();
+            }
+        }, { once: true });
+        
+        // Listen to native events in case they change
+        audio.addEventListener('play', updateUI);
+        audio.addEventListener('pause', updateUI);
+    }
+}
+
+// Initialize audio player
+initAudioPlayer();
